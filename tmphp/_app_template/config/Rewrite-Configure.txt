@@ -1,0 +1,80 @@
+##########################################
+# TMPHP Framwork Apache rewrite configure
+#
+# TMPHP 框架URL Rewrite配置说明
+##########################################
+
+###
+# Load rewrite 
+#
+# 加载Url Rewrite 模块，必须在 httpd.conf 里加载，一般Web服务器都会加载好
+###
+LoadModule rewrite_module modules/mod_rewrite.so
+
+
+####
+# Configure default rewrite
+#
+# 如果要在 .htaccess 里配置URL Rewrite，或在 httpd.conf，
+# 记得必须把目录 AllowOverride 设置为 All，一般缺省为 None
+#
+#<Directory />
+#    Options Indexes FollowSymLinks
+#    AllowOverride None #修改这句为 AllowOverride All
+#    Order deny,allow
+#    allow from all
+#</Directory>
+#
+# 或者类似这样：
+#<Directory "/path/to/demo/view">
+#    Options Indexes FollowSymLinks
+#    AllowOverride None  #修改这句为 AllowOverride All
+#    Order deny,allow
+#    allow from all
+#</Directory>
+# 
+#
+# URL 规则如下配置:
+####
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule !\.(js|ico|gif|jpg|png|css|swf|zip|rar|gz|mp3|wma)$ index.php
+</IfModule>
+
+
+#####################
+# URL Rewrite参考1
+####################
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+#</IfModule>
+##
+# 以下为类似Nginx配置
+#
+#if (!-e $request_filename) {
+#        rewrite (.*) /index.php last;
+#    }
+
+
+
+####
+# Configure VirtualHost rewrite
+#
+#
+# 在虚拟主机里配置URL Rewrite规则
+####
+<VirtualHost *:80>
+   ServerAdmin admin@localhost
+   DocumentRoot /path/to/demo/view
+   ServerName  demo.example.com
+   RewriteEngine On
+   RewriteRule !\.(js|ico|gif|jpg|png|css|swf|zip|rar|gz|mp3|wma)$ index.php
+   <Directory />
+         Options Includes FollowSymLinks
+         AllowOverride None
+   </Directory>
+</VirtualHost>

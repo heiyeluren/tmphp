@@ -1,0 +1,29 @@
+/**
+ * tag style define
+ */
+*{ 
+	/*margin:10px;*/
+}
+body {
+	background-color: #fff;
+}
+ul {
+	color: #000066;
+}
+li {
+	margin-top: 5px;
+}
+img {
+	border: 0;
+}
+p {
+	margin: 5px;
+}
+
+/**
+ * class style define
+ */
+.center{
+	text-align: center;
+}
+
