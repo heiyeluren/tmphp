@@ -1,11 +1,14 @@
 tmphp
 =========
 
-
-<pre>
 <b>TMPHP(Tiny-Mini&Tiema) PHP5 Web Framework Project</b>
 
 TMPHP 是一个简洁高效的PHP5 MVC框架，基本核心特点是：简洁、高效、优雅
+
+最后更新：2009/12/28 <br />
+官方网站：http://tmphp.googlecode.com
+
+<pre>
 
 <b>核心特点</b>
   * 纯粹的PHP5面向对象代码特点，纯粹的MVC框架支持
@@ -32,5 +35,5 @@ TMPHP-1.0.0 版本下载(2009/12/22):
 
 </pre>
 
-官网： http://tmphp.googlecode.com
+
 
