@@ -6,7 +6,7 @@ tmphp
 TMPHP 是一个简洁高效的PHP5 MVC框架，基本核心特点是：简洁、高效、优雅
 
 最后更新：2009/12/28 <br />
-官方网站：http://tmphp.googlecode.com
+
 
 <pre>
 
